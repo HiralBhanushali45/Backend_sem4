@@ -1,6 +1,5 @@
 // 3. Create a webapp in NodeJS which reads ƒles like about.txt, contact.txt and display it using 
 // http core module (C) 
-
 const http = require("http")
 const fs=require("fs")
 
@@ -13,17 +12,17 @@ fs.readFile("about.txt",(err,data)=>{
         console.log("Error",err)
         return;
     }
-    console.log("Data",data.toString())
+   res.end(`Data: ${data.toString()}`);
 });
    }
-   else if(req.url==="/contact"){
+   else if(req.url==="/contact"){ 
    
-fs.readFile("contact.txt",(err,data)=>{
+fs.readFile("Contact.txt",(err,data)=>{
     if(err){
         console.log("Error",err)
         return;
     }
-    console.log("Data",data.toString())
+    res.end(`Data: ${data.toString()}`);
 });
    }
    else{
